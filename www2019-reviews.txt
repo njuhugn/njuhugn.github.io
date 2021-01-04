@@ -1,0 +1,100 @@
+***TheWebConf (WWW) 2019***
+Accept rate: Full: 225/1247=18%, Short: 72/361=20%,
+Full papers as short: 63/1247=5%
+
+PAPER: 931
+TITLE: Transfer Meets Hybrid: A Synthetic Approach for Cross-Domain Collaborative Filtering with Text
+AUTHORS: Guangneng Hu, Yu Zhang, and Qiang Yang
+
+
+----------------------- REVIEW 1 ---------------------
+Audience: 3 (Yes, to a large group of people)
+Overall score: -1 (weak reject)
+
+----------- Strengths -----------
+The idea of utilizing word embeddings and item embeddings is straightforward. The figure is also helpful for understanding the network structure. The experiments are comprehensive, comparing many baseline models. The ablation study is also a plus.
+
+----------- Weaknesses -----------
+The idea is not novel. See for example the following studies. The list is by no means exhaustive, and there are many more.
+
+Item cold-start recommendations: learning local collective embeddings
+Martin Saveski, and Amin Mantrach
+ACM Conference on Recommender systems, 2014
+
+Learning word embeddings from wikipedia for content-based recommender systems
+Cataldo Musto, Giovanni Semeraro, Marco de Gemmis, and Pasquale Lops
+European Conference on Information Retrieval, 2016
+
+The language is a little awkward. See the list below.
+
+abstract: "a user's all information needs"
+section 1: "with unstructured text in an end-to-end learning"
+section 3: "the probability of his/her each observation"
+section 5.1: "it may support more the words such as"
+
+The texts are repetitive and redundant. Remark I and II seem out of place. Mentioning tensorflow and its mechanism in section 5.4 are probably not necessary. The update equation in section 5.4 is also not necessary. Section 5.5 does not seem to add much.  The paragraph before section 5.1 can be removed.
+
+The problem formulation (section 3) is poorly written. The authors should specify clearly the goal of the task, the input/output pairs, and the evaluation metric, without going into the details of the proposed model.
+
+The model (in section 4 and 5) is presented in a very nice way. The figure is also nice. However, the authors should make more use of the figure by referring to the parts when describing the model.
+
+Some of the notations are also very awkward. For example, in section 5.1, d_ui has u and i on the left hand side, while (w_1, w_2, \dots, w_l) has neither. Similarly in (13), there is no u on the right hand side.
+
+Here are some minor details:
+
+The cold-start problem should be defined in the introduction.
+
+Data sparsity in section 6.1 is not really defined.
+
+There are many hand-wavy descriptions throughout the paper. For example, the paragraph before remark II.
+
+It is probably worth mentioning that c_ui in y_ui is independent of the user. According to (16), the c_ui part can be seen as probability purely based on the item and without knowing the user.
+
+----------- Summary and review comments -----------
+This paper proposes a new network architecture for collaborative filtering. Compared to the regular neural approach for collaborative filtering, the proposed network has two additional branches, one for incorporating documents and the other for incorporating items. The overall ability to generalize is improved because the word embeddings (for representing the documents) and the item embeddings are shared across users.
+
+The idea is clearly presented and is shown to work well. However, it is not particularly novel. The writing can be much improved, and the paper could have been more succinct.
+
+
+----------------------- REVIEW 2 ---------------------
+Audience: 3 (Yes, to a large group of people)
+Overall score: 2 (accept)
+
+----------- Strengths -----------
+Improvement in state of the art for collaborative filtering.
+Well explained methodology 
+Good evaluation with many baselines
+
+----------- Weaknesses -----------
+Some minor issues with English.
+Significance of results are not reported
+
+----------- Summary and review comments -----------
+This paper presents a methodology for collaborative filtering that combines both the text analysis and transfer learning into a single system. The evaluation is thorough and the results show improvement over the state of the art. However I am not really an expert in this area so can't be sure of the value of this approach.
+
+There should probably be significance analysis to support the results. 
+
+Minor issues:
+"typically participates several systems"??
+"alleviate sparse issue"??
+"Deep model" does not need to be capitalised
+
+
+----------------------- REVIEW 3 ---------------------
+Audience: 2 (Yes, but only to a small group of people)
+Overall score: 1 (weak accept)
+
+----------- Strengths -----------
+-- proposes a novel model for cross-domain recommendations
+-- paper is well written
+-- evaluation results are well presented
+
+----------- Weaknesses -----------
+-- evaluation results are based on two categories
+-- unclear whether the model can support more than two domains
+-- unclear whether the model can support domains from different datasets
+
+----------- Summary and review comments -----------
+This paper proposes a novel neural model for cross-domain collaborative filtering using unstructured text. This model can extract useful content from different sources via a memory network and can selectively transfer knowledge across domains by a transfer network.  A shared layer of feature interactions is used to couple the high-level representations learned from individual networks. This work is evaluated on two real-world datasets: Cheetah Mobile and Amazon datasets. With the Cheetah Mobile dataset, the authors analyse user-news reading records and user-app installations, and with the Amazon dataset, the authors analyse two categories: Men and Sports cross-domains
+
+Overall, the paper is clearly explained and well written. The methodology is well explained and the evaluation results are well presented and analysed by comparing the proposed model results with the state-of-the-art results. The main concern with this paper is whether the proposed model could support more than two categories for cross-domain recommendation since the authors evaluate their system with only two categories in both datasets, i.e. it seems like the cross-domain recommendation is limited to only two domains. Moreover, it is unclear whether the model could support a domain from one dataset and a domain from another dataset i.e. cross-domain and cross-dataset recommendations.
