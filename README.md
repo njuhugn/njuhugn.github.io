@@ -1,2 +1,2 @@
 # njuhugn.github.io
-bio: njuhugn.github.io
+bio: https://njuhugn.github.io/
