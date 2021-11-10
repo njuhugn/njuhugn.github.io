@@ -1,2 +1,2 @@
 # njuhugn.github.io
-bio: https://njuhugn.github.io/
+Guangneng Hu: https://njuhugn.github.io/
