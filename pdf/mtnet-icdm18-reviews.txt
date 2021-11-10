@@ -1,0 +1,262 @@
+The review report from reviewer #1:
+
+*1: Is the paper relevant to ICDM?
+  [_] No
+  [X] Yes
+
+*2: How innovative is the paper?
+  [_] 6 (Very innovative)
+  [_] 3 (Innovative)
+  [X] -2 (Marginally)
+  [_] -4 (Not very much)
+  [_] -6 (Not at all)
+
+*3: How would you rate the technical quality of the paper?
+  [_] 6 (Very high)
+  [_] 3 (High)
+  [X] -2 (Marginal)
+  [_] -4 (Low)
+  [_] -6 (Very low)
+
+*4: How is the presentation?
+  [_] 6 (Excellent)
+  [_] 3 (Good)
+  [X] -2 (Marginal)
+  [_] -4 (Below average)
+  [_] -6 (Poor)
+
+*5: Is the paper of interest to ICDM users and practitioners?
+  [X] 3 (Yes)
+  [_] 2 (May be)
+  [_] 1 (No)
+  [_] 0 (Not applicable)
+
+*6: What is your confidence in your review of this paper?
+  [X] 2 (High)
+  [_] 1 (Medium)
+  [_] 0 (Low)
+
+*7: Overall recommendation
+  [_] 6: must accept (in top 25% of ICDM accepted papers)
+  [_] 3: should accept (in top 80% of ICDM accepted papers)
+  [_] -2: marginal (in bottom 20% of ICDM accepted papers)
+  [X] -4: should reject (below acceptance bar)
+  [_] -6: must reject (unacceptable: too weak, incomplete, or wrong)
+
+*8: Summary of the paper's main contribution and impact
+  The paper proposes an approach for integrating textual and cross-domain data in an end-to-end neural network for recommendations to overcome the sparsity issue in matrix factorization-based recommendation system. The proposed system is called MTNet (Memory and Transfer network) with memory network capturing useful content from free text and transfer network selectively transferring knowledge across domains.
+
+*9: Justification of your recommendation
+  While the work is interesting and well-written, the improvements compared to cross-stitch network is not huge and the novelty of the approach follows the fairly standard data integration framework in neural networks transfer learning paradigms.
+
+*10: Three strong points of this paper (please number each point)
+  1. Interesting integration of two data sources into a recommendation system with an end-to-end neural network-based approach. The method is also able to obtain relative improvement over baseline approaches.
+
+2. The paper is well-written with good ablation test to study the impact of different model components and is easy to read/understand.
+
+*11: Three weak points of this paper (please number each point)
+  See the detail comments:
+
+*12: Is this submission among the best 10% of submissions that you reviewed for ICDM'18?
+  [X] No
+  [_] Yes
+
+*13: Would you be able to replicate the results based on the information given in the paper?
+  [X] No
+  [_] Yes
+
+*14: Are the data and implementations publicly available for possible replication?
+  [X] No
+  [_] Yes
+
+*15: If the paper is accepted, which format would you suggest?
+  [X] Regular Paper
+  [_] Short Paper
+
+*16: Detailed comments for the authors
+  1. The readability of the paper is little difficult especially with many abbreviations at the beginning followed by some confusing mathematical notations [ For example; page 3 L denotes vocabulary size while "l" denotes review length ].
+
+2. The complexity analysis is incomplete. Though this is not required in terms of the completeness of the paper, the current section does not address the exact numeric (or big-O) formulations.
+
+3. The vocabulary size is problem specific (e.g.; in machine translation, it is larger than 35000). The number 8000 is not justified.
+
+4. It is not mentioned how external embedding matrix C (page 3) is learned.
+
+========================================================
+The review report from reviewer #2:
+
+*1: Is the paper relevant to ICDM?
+  [_] No
+  [X] Yes
+
+*2: How innovative is the paper?
+  [_] 6 (Very innovative)
+  [_] 3 (Innovative)
+  [X] -2 (Marginally)
+  [_] -4 (Not very much)
+  [_] -6 (Not at all)
+
+*3: How would you rate the technical quality of the paper?
+  [_] 6 (Very high)
+  [_] 3 (High)
+  [X] -2 (Marginal)
+  [_] -4 (Low)
+  [_] -6 (Very low)
+
+*4: How is the presentation?
+  [_] 6 (Excellent)
+  [X] 3 (Good)
+  [_] -2 (Marginal)
+  [_] -4 (Below average)
+  [_] -6 (Poor)
+
+*5: Is the paper of interest to ICDM users and practitioners?
+  [X] 3 (Yes)
+  [_] 2 (May be)
+  [_] 1 (No)
+  [_] 0 (Not applicable)
+
+*6: What is your confidence in your review of this paper?
+  [_] 2 (High)
+  [X] 1 (Medium)
+  [_] 0 (Low)
+
+*7: Overall recommendation
+  [_] 6: must accept (in top 25% of ICDM accepted papers)
+  [_] 3: should accept (in top 80% of ICDM accepted papers)
+  [X] -2: marginal (in bottom 20% of ICDM accepted papers)
+  [_] -4: should reject (below acceptance bar)
+  [_] -6: must reject (unacceptable: too weak, incomplete, or wrong)
+
+*8: Summary of the paper's main contribution and impact
+  Authors propose an approach to cross-domain recommendations that also incorporate unstructured text content.
+
+*9: Justification of your recommendation
+  Please see detailed review
+
+*10: Three strong points of this paper (please number each point)
+  1. Results appear good
+2. Evaluation considered two different real-world cross-domain datasets that included text content
+3. Evaluation attempted to quantify contribution of text and auxiliary domain on results
+
+*11: Three weak points of this paper (please number each point)
+  1. Related Work section was weak
+2. Cross-domain recommenders are an active research area with many recent works that should have been considered and compared
+3. Omissions of recent works made it challenging to assess novelty and impact of proposed approach
+
+*12: Is this submission among the best 10% of submissions that you reviewed for ICDM'18?
+  [X] No
+  [_] Yes
+
+*13: Would you be able to replicate the results based on the information given in the paper?
+  [X] No
+  [_] Yes
+
+*14: Are the data and implementations publicly available for possible replication?
+  [X] No
+  [_] Yes
+
+*15: If the paper is accepted, which format would you suggest?
+  [_] Regular Paper
+  [X] Short Paper
+
+*16: Detailed comments for the authors
+  The evaluation included a number of different baselines and tested against cross-domain datasets including text content. Results of proposed approach appear good in comparison to baselines. Authors also attempted to quantify the indvidual impact of both the unstructured text content and the auxilliary domain on performance, which was enlightening.
+
+Cross-domain recommenders are actively researched and authors failed to discuss some of this recent work in Related Work and Evaluation. One such example is "Cross-domain Recommendation via Deep Domain Adaptation" (2018).
+
+
+========================================================
+The review report from reviewer #3:
+
+*1: Is the paper relevant to ICDM?
+  [_] No
+  [X] Yes
+
+*2: How innovative is the paper?
+  [_] 6 (Very innovative)
+  [X] 3 (Innovative)
+  [_] -2 (Marginally)
+  [_] -4 (Not very much)
+  [_] -6 (Not at all)
+
+*3: How would you rate the technical quality of the paper?
+  [_] 6 (Very high)
+  [X] 3 (High)
+  [_] -2 (Marginal)
+  [_] -4 (Low)
+  [_] -6 (Very low)
+
+*4: How is the presentation?
+  [_] 6 (Excellent)
+  [X] 3 (Good)
+  [_] -2 (Marginal)
+  [_] -4 (Below average)
+  [_] -6 (Poor)
+
+*5: Is the paper of interest to ICDM users and practitioners?
+  [X] 3 (Yes)
+  [_] 2 (May be)
+  [_] 1 (No)
+  [_] 0 (Not applicable)
+
+*6: What is your confidence in your review of this paper?
+  [X] 2 (High)
+  [_] 1 (Medium)
+  [_] 0 (Low)
+
+*7: Overall recommendation
+  [_] 6: must accept (in top 25% of ICDM accepted papers)
+  [X] 3: should accept (in top 80% of ICDM accepted papers)
+  [_] -2: marginal (in bottom 20% of ICDM accepted papers)
+  [_] -4: should reject (below acceptance bar)
+  [_] -6: must reject (unacceptable: too weak, incomplete, or wrong)
+
+*8: Summary of the paper's main contribution and impact
+  A novel neural method called MTNet is proposed, which can attentively extract useful content via a memory network (MNet) and can selectively transfer knowledge from across domains by a transfer network (TNet).
+
+*9: Justification of your recommendation
+  The validation is not sufficient, new datasets and comparisons should be considered in the experiment.
+
+*10: Three strong points of this paper (please number each point)
+  1) MTNet can attentively extract useful content via a memory network.
+2) MTNet can selectively transfer knowledge from across domains by a transfer network.
+3) The proposed model can alleviate the sparsity issue including cold-user and cold-item start.
+
+*11: Three weak points of this paper (please number each point)
+  1) Some experiments on new types of datasets should be considered in the paper such as yelp, douban, etc.
+2) The sensitivity analysis on parameter settings should be provided.
+3) The pseudo code of the optimization method should be provided.
+
+*12: Is this submission among the best 10% of submissions that you reviewed for ICDM'18?
+  [X] No
+  [_] Yes
+
+*13: Would you be able to replicate the results based on the information given in the paper?
+  [X] No
+  [_] Yes
+
+*14: Are the data and implementations publicly available for possible replication?
+  [X] No
+  [_] Yes
+
+*15: If the paper is accepted, which format would you suggest?
+  [X] Regular Paper
+  [_] Short Paper
+
+*16: Detailed comments for the authors
+  This paper presents a novel neural model called MTNet for cross-domain recommendation with unstructured text in an end-to-end manner. MTNet can attentively extract useful content via a memory network (refer to as MNet) and can selectively transfer knowledge from across domains by a transfer network (refer to as TNet). The proposed MTNet model alleviates the sparsity issue, including cold-user and cold-item start, and outperforms various baselines in terms of ranking metrics on two real-world datasets.
+
+Major concerns:
+1. The effectiveness of proposed MTNet model was validated using two real-world cross-domain datasets. The first one is Mobile dataset and the second is a public Amazon dataset. Some experiments on new types of datasets should be added such as yelp, douban, etc.
+
+2. Existing studies, e.g., Hu et al. [1], uses the dataset of CiteULike when validating the effectiveness. It would be better if this dataset can also be used in the experiment of the manuscript.
+
+3. Cold-start is one of the most challenging problems in the field of recommender systems, but the improvement over cold-users and cold-items is only obtained by comparing with the pure neural collaborative filtering method, e.g., MLP. It is recommended to add some other comparisons.
+
+Minor concerns:
+1. The sensitivity analysis of parameter settings should be provided.
+2. It would be better if the pseudo code of the optimization method can be given.
+
+References:
+[1]. Hu, G., Zhang Y., Yang, Q. LCMR: Local and Centralized Memories for Collaborative Filtering with Unstructured Text. arXiv preprint arXiv:1804.06201,2018
