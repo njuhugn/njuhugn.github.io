@@ -1,0 +1,110 @@
+***CIKM 2018***
+Accept rate: 147/862=17%
+
+PAPER: 247
+TITLE: CoNet: Collaborative Cross Networks for Cross-Domain Recommendation
+AUTHORS: Guangneng Hu, Yu Zhang, and Qiang Yang
+
+
+------------Review 1-------------------
+Relevance to CIKM:	
+5: (excellent)
+Originality of the Work:	
+4: (good)
+Technical Soundness:	
+4: (good)
+Quality of Presentation:	
+4: (good)
+Impact of Ideas or Results:	
+3: (fair)
+Adequacy of Citations:	
+2: (poor)
+Reproducibility of Methods:	
+4: (good)
+
+List 3 or more strong points, labelled S1, S2, ...:	
+1. The paper is well written and prepared. The preliminaries and background knowledge is clearly described. The proposed technique is easy to follow.
+2. The extension over the cross-stitch convolutional networks (CSN) is novel and reasonable. 
+3. Extensive experiments over two cross-domain (four domains) illustrate the superiority of the proposed model against the CSN and other alternatives.
+
+List 3 or more weak points, labelled W1, W2, ...:	
+1. Some existing state-of-the-art solutions recently proposed are missing. Some of them are listed as follows:
+a. Explainable Cross-Domain Recommendations Through Relational Learning, AAAI2018
+b. A Collaborative Ranking model for Cross-Domain Recommendations, CIKM2017
+c. Cross-Domain Recommendation: An Embedding and Mapping Approach, IJCAI2017
+d. Cross-Domain Recommendation via Clustering on Multi-Layer Graphs, SIGIR2017
+The discussion about the existing techniques in Section 1 and Section 6 can tell that the authors are unaware of these advances. The authors are expected to evaluate some techniques mentioned above for performance comparison.
+2. The study of sparse penalty (Figure 4.a) is interesting. It is expected that the performance of SCoNet without the lasso regularization is reported to further validate its contribution. However, no information is provided regarding this point.
+3. The experiments regarding the impact of sparsity would be conducted in a more straightforward way. The performances over the items/users with few interactions could be compared.
+
+Overall Evaluation:	
+3: (I half-champion and would accept if someone else is also at least half-championing)
+
+Cross-domain recommendation has drawn increasing attention from the research community. This paper proposes sparse structure driven collaborative cross networks (SCoNet) for this problem. SCoNET models each domain recommendation task with a deep MLP network. The transfer knowledge is implemented by extending an existing solution, cross-stitch networks (CSN). The main difference is that a matrix based transformation is utilized to project the hidden states in the source domain into the target domain. In this way, different features of the hidden state could receive different treatments, enabling highlighting the important features or their combinations. The experiments over two real-world cross-domain datasets illustrate the superiority of the proposed SCoNet. Overall, the paper is well prepared and easy to understand. The major concern is that the authors seem to be unaware of the recently proposed techniques for cross-domain recommendation. It would be more valuable if the performance comparison with the recent state-of-the-art is reported. Anyway, if the conference still has the room, I would like to see this paper accepted.
+
+Some typos and grammatical errors:
+1.	Page 5 “The update equations are” -> “The update equation is”
+
+
+-----------Review 2--------------------
+Relevance to CIKM:	
+5: (excellent)
+Originality of the Work:	
+4: (good)
+Technical Soundness:	
+4: (good)
+Quality of Presentation:	
+4: (good)
+Impact of Ideas or Results:	
+3: (fair)
+Adequacy of Citations:	
+5: (excellent)
+Reproducibility of Methods:	
+3: (fair)
+
+List 3 or more strong points, labelled S1, S2, ...:	
+S1: The technique presented in the paper is novel. The paper takes inspiration from cross-stitch networks that focus on image recognition and extend the idea for recommendation systems.
+S2: The experimentation is rigorous. The paper evaluates the introduced techniques for relevance along with impact of sparsity, benefit of transfer learning, optimization performance etc.
+S3: In general, the paper is well written and easy to read.
+
+List 3 or more weak points, labelled W1, W2, ...:	
+W1: The datasets used (Mobile and Amazon), are not big. Especially when we consider the shared users and their accessed items. Experimentation on larger datasets further can strengthen the conclusions of this paper.
+W2: Comparison with other techniques that are cross-domain and also involve deep learning, should be done. Although, I am not sure if any such other techniques are published.
+W3: Since the related work section in the paper introduces and defines various terms, it is weird that it is the second-last section. In my opinion, bringing this section earlier, would help non-expert readers understand the paper better.
+
+Overall Evaluation:	
+3: (I half-champion and would accept if someone else is also at least half-championing)
+
+The paper takes motivation from cross-stitch networks and uses it in the field of cross-domain recommendation using transfer learning. It introduces the technique CoNet (and also its improved variant SCoNet), that makes cross mappings from one network to another, in both directions, enabling knowledge transfer among domains. I believe this work is novel in the field of cross-domain recommendation. 
+
+The paper in general is well written and easy to follow. The experimental section is rigorous and covers various aspects in evaluation. The experimentation with larger datasets however can further strengthen the conclusions of the paper. 
+
+Overall, the paper is interesting, presents good results and is likely to lead to further applications. Therefore, I recommend acceptance of the paper.
+
+
+-----------Review 3-------------------
+Relevance to CIKM:	
+5: (excellent)
+Originality of the Work:	
+4: (good)
+Technical Soundness:	
+4: (good)
+Quality of Presentation:	
+5: (excellent)
+Impact of Ideas or Results:	
+4: (good)
+Adequacy of Citations:	
+4: (good)
+Reproducibility of Methods:	
+4: (good)
+
+List 3 or more strong points, labelled S1, S2, ...:	
+This paper proposes a transfer learning method for cross-domain recommendation with neural networks. The model makes dual knowledge transfer across domains by introducing cross connections from one domain to another and vice versa, which can improve the recommendation performance. The model is technically deep and the results look good when compared to prior methods. The writing of this paper is good.
+
+List 3 or more weak points, labelled W1, W2, ...:	
+Figure 1 should be explained in more detail on the differences between the two units.
+
+Overall Evaluation:	
+3: (I half-champion and would accept if someone else is also at least half-championing)
+
+The proposed method of this paper is interesting and creative. The findings are interesting and well discussed. I would like to see this work accepted.
