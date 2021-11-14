@@ -1,0 +1,112 @@
+*** EACL 2021 ***
+Acceptance rate: Long: 238 / X = x.x%, Short: 88 / Z = z.z%
+
+
+Submission #319
+============================================================================ 
+
+Title: TrNews: Heterogeneous User-Interest Transfer Learning for News Recommendation
+Authors: Guangneng Hu and Qiang Yang
+============================================================================
+                            META-REVIEW
+============================================================================ 
+
+Comments: The paper approaches cross-domain news recommendation via transfer learning. The proposed method outperforms the previous state-of-the-art methods on four datasets and the paper is well written and easy to follow. The authors should include the improvements over previous works in camera ready version to strengthen the paper.
+
+============================================================================
+                            REVIEWER #1
+============================================================================
+
+What is this paper about, what contributions does it make, what are the strengths and weaknesses, what are the questions for the authors?
+---------------------------------------------------------------------------
+In this paper, the authors point out that cold-start problem is crucial in news recommendation system and the various user interest is challenging for transfer learning. To tackle challenges of heterogeneous user interests and limited aligned data between domains, TrNews is proposed which uses a translator-network between source and target domains to capture the relations between them. For a new user without any history behaviour in target domain during inference, the translator-network takes the information of source domain and converts it into target domain.
+
+strengths:
+1. TrNews offers an easy solution for cold-start users and outperforms the previous state-of-the-art methods on four datasets in experiments.
+2. The visualization of the importance of each news article in the history to the future news is good and convicing.
+3. This paper is well written and easy to follow.
+
+weaknesses:
+1. The idea of compensating network (or translator-netwrok in this paper) is very common in transfer learning. I do not see many appealing insights.
+2. Comparing to previous works, the advantages of TrNews are not elaborated.
+
+In the rebuttal, the author(s) addresses my concerns and I changed my overall score. Note that the author(s) should spend more effort in updating the final camera ready to include the improvements over previous works  to strengthen the paper.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
+
+
+============================================================================
+                            REVIEWER #2
+============================================================================
+
+What is this paper about, what contributions does it make, what are the strengths and weaknesses, what are the questions for the authors?
+---------------------------------------------------------------------------
+This paper investigates the cross-domain news recommendation via transfer learning, proposes the transfer learning model TrNews.
+The experiments on real-word datasets demonstrate the necessity of tackling heterogeneity of user interests and word distributions across domains.
+The proposed TrNews model and its translator component are effective to transfer knowledge from the source network to the target network.
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+TrNews outperforms the state-of-the-art recommendation methods on four real-world datasets in terms of four metrics.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 3.5
+
+
+============================================================================
+                            REVIEWER #3
+============================================================================
+
+What is this paper about, what contributions does it make, what are the strengths and weaknesses, what are the questions for the authors?
+---------------------------------------------------------------------------
+The paper address the problem of how to train a news recommendation system where a user's reading history is known for a source domain but not for the target domain.
+
+The approach is to use a transfer learning model that translates from an embedding representation of the user in the source domain to an embedding representation of the user in the target domain, which is trained on an intersection of news items in the source domain that also exist in the target domain.
+
+A strength of this approach is that it appears to perform much better than other news recommendation systems on several real world datasets.  Another strength is that there are many experiments with variations of the model, that show why the model was constructed in one way rather than another.
+
+A weakness of this approach is that its performance depends on the user's reading history in the source domain, which may not always be the case in the real world.
+
+There were several places in the paper that were not clear:
+In Section 3.1.1, User Encoder, lines 304-305 "a is the attention function with parameters to be learned."  What is the loss function used to train the MLP?
+In Section 3.2, Translator, line 348 "U_0 = U_S \cap U_T".  What is U_0?  Is it a set of news documents that occur both in the source domain and the target domain?
+---------------------------------------------------------------------------
+
+
+Typos, Grammar, Style and References
+---------------------------------------------------------------------------
+lines 472-473: "for each news in her history" --> "for each news item in her history"
+lines 474-475 "to randomly sample a number of negative news" --> "to randomly sample a number of negative news items"
+lines 476-477 "how well the recommender can rank this positive news" --> "how well the recommender can rank this positive news item"
+lines 580-582 "In more detail, it is inferior by training...and then using" --> "In more detail, it is inferior to train...and then use..."
+lines 584-586 "Instead, it is good by training... and then learning" --> "Instead, it is good to train... and then to learn..."
+---------------------------------------------------------------------------
+
+
+Reasons to accept
+---------------------------------------------------------------------------
+They would be introduced to a state of the art approach for cross-corpus news recommendation.  It might be able to be adapted for domain adaptation for other problems.
+---------------------------------------------------------------------------
+
+
+Reasons to reject
+---------------------------------------------------------------------------
+The transfer learning approach described in the paper may not be readily employed for adaptation for other NLP tasks.
+---------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------
+Reviewer's Scores
+---------------------------------------------------------------------------
+                  Overall Recommendation: 4
