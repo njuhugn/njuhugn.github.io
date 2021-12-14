@@ -8,13 +8,20 @@
 <link rel="stylesheet" href="stylesheet/jemdoc.css" type="text/css" />
 <link rel="stylesheet" href="stylesheet/styles.css" type="text/css" />
 <title>Guangneng HU</title>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
-</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
 <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-	  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+  "tex2jax": {
+    "inlineMath": [["$","$"], ["\\(","\\)"]],
+    "displayMath": [["\\[","\\]"]],
+    "processEscapes": true
+  }
+}
+);
 </script>
+
 <link rel="stylesheet" href="fontawesome-free-6.0.0-beta2-web/css/fontawesome.min.css">
 </head>
 
@@ -248,7 +255,7 @@ I got PhD in CSE at <a href="https://hkust.edu.hk/" target="_blank">HK Univ. of 
 </tr>
 <tr>
   <td class="left">18</td>
-  <td class="left"><a>Stability and Deviation Optimal Risk Bounds with Convergence Rate O(1/n)</a></td>
+  <td class="left"><a>Stability and Deviation Optimal Risk Bounds with Convergence Rate $O(1/n)$</a></td>
   <td class="left">Yegor Klochkov · Nikita Zhivotovskiy</td>
 </tr>
 <tr>
