@@ -1,0 +1,195 @@
+----------------------- REVIEW 1 ---------------------
+SUBMISSION: 1006
+TITLE: Dual Side Deep Context-aware Modulation for Social Recommendation
+AUTHORS: Bairan Fu, Wenming Zhang, Guangneng Hu, Xinyu Dai, Shujian Huang and Jiajun Chen
+
+----------- Relevance to the Web Conference -----------
+SCORE: 1 (Relevant)
+----------- Overall evaluation -----------
+SCORE: 1 (Weak accept)
+----------- Summary -----------
+This paper proposes a new framework for social recommendation. This framework utilizes context information to train a graph neural network to capture social relations and collaborative relations. Also, a so-called dual side deep model is proposed to generate user embedding by considering the friends’ rich information and generate item embedding by considering items’ similarity.
+----------- Originality -----------
+SCORE: 2 (Conventional: Rather straightforward, a number of people could have come up with this)
+----------- Potential impact -----------
+SCORE: 3 (Broad: Could help ongoing research in a broader research community)
+----------- Reproducibility -----------
+SCORE: 2 (Some but not all code, data or the details of the experimental setup are made available)
+----------- Quality of execution -----------
+SCORE: 3 (Reasonable: Generally solid work, but certain claims could be justified better)
+----------- Quality of presentation -----------
+SCORE: 3 (Reasonable: Understandable to a large extent, but parts of the paper need more work)
+----------- Adequacy of citations -----------
+SCORE: 2 (Reasonable: Coverage of past work is acceptable, but a few papers are missing)
+----- TEXT:
+For example,‘Collaborative neural social recommendation’ in TSMC 2018
+----------- Ethics -----------
+SCORE: 1 (No)
+----- TEXT:
+No
+----------- Strengths -----------
+(1) The structure of this paper is clear. The example in Introduction can help readers understand the motivation of this paper. Also, Figure 2 can help readers follow the core ideas of the proposed model.
+
+(2) The experiments are extensive and the results seem to be great. Especially, Table 3 is very clear, which can convince me that the authors have done a fair comparison in the experiment part.
+----------- Weaknesses -----------
+(1) According to the content in Abstract and Introduction, the idea of this paper is not too novel. Some approaches have considered both social relation and collaborative filtering, such as ‘Collaborative neural social recommendation’ in TSMC 2018. The authors should explain more about the difference between their proposed approach and these existing approaches.
+
+
+----------------------- REVIEW 2 ---------------------
+SUBMISSION: 1006
+TITLE: Dual Side Deep Context-aware Modulation for Social Recommendation
+AUTHORS: Bairan Fu, Wenming Zhang, Guangneng Hu, Xinyu Dai, Shujian Huang and Jiajun Chen
+
+----------- Relevance to the Web Conference -----------
+SCORE: 1 (Relevant)
+----------- Overall evaluation -----------
+SCORE: 1 (Weak accept)
+----------- Summary -----------
+The paper studies the top-N recommendation task with social networks and proposes a dual side deep context aware model to jointly incorporate social relation  and collaborative relation. Extensive experiments demonstrate the effectiveness of the proposed method, as well as the strength of each well-designed component.
+----------- Originality -----------
+SCORE: 2 (Conventional: Rather straightforward, a number of people could have come up with this)
+----------- Potential impact -----------
+SCORE: 3 (Broad: Could help ongoing research in a broader research community)
+----------- Reproducibility -----------
+SCORE: 2 (Some but not all code, data or the details of the experimental setup are made available)
+----------- Quality of execution -----------
+SCORE: 3 (Reasonable: Generally solid work, but certain claims could be justified better)
+----------- Quality of presentation -----------
+SCORE: 3 (Reasonable: Understandable to a large extent, but parts of the paper need more work)
+----------- Adequacy of citations -----------
+SCORE: 2 (Reasonable: Coverage of past work is acceptable, but a few papers are missing)
+----------- Ethics -----------
+SCORE: 1 (No)
+----- TEXT:
+None
+----------- Strengths -----------
+Clear motivation and novel idea.
+The proposed model is effective.
+Well written and easy to follow.
+----------- Weaknesses -----------
+The experiment datasets are too small.
+The proposed method cannot be directly applied in real-world recommender system.
+The discussion of related work can be more comprehensive.
+----------- Reasons to accept -----------
+1. Existing methods seldom model deep context for user side interests and item side attraction in an explicit way.  The motivation of presenting dual side deep context-aware modulation is clear and reasonable.
+
+2. The dual side deep context-aware modulation is proposed to jointly model the user interests and item attraction with graph enhanced user preference and item attribute. This design is reasonable and effective.
+
+3. The experiments design is reasonable, which demonstrates the effectiveness of each well-designed part in model.
+
+4. The proposed model is well written and well organized, as well as easy to follow.
+----------- Reasons to reject -----------
+1. The experiment data are too small. All datasets have less than 500K interactions, much smaller than the data used in most recommendation papers(at least million size). Also, one more dataset is encouraged to add.
+
+2. The implementation of RGNN seems straightforward. It is interesting to consider the interaction between the three graphs.
+
+3. In real-world recommender system, the number of users and items can be more than a hundred million. Hence, how to construct users' similarity graph and user's social graph on such a large-scale graph.
+
+4. The discussion of related work can be more comprehensive.
+  a) Multiplex Memory Network for Collaborative Filtering SDM 2020. (capture collaborative similarity among users and items)
+  b) Collaborative memory network for recommendation systems SIGIR 2018. (capture high-order social relations)
+  c) ...
+----------- Rebuttal -----------
+See above
+
+
+----------------------- REVIEW 3 ---------------------
+SUBMISSION: 1006
+TITLE: Dual Side Deep Context-aware Modulation for Social Recommendation
+AUTHORS: Bairan Fu, Wenming Zhang, Guangneng Hu, Xinyu Dai, Shujian Huang and Jiajun Chen
+
+----------- Relevance to the Web Conference -----------
+SCORE: 1 (Relevant)
+----------- Overall evaluation -----------
+SCORE: 1 (Weak accept)
+----------- Summary -----------
+This work focused on the user social recommendation problem. Although recent works such as MF or GCN based methods are proposed to alleviate this problem, they ignore the relation enhanced context-aware item attraction.
+Thus, this paper first presents a novel GCN to model user-user graph, item-item graph, and user's social graph. Besides, this paper is the first to consider the social relation and similarity among users and items as deep context, which could model the user's friend information sufficently. Experimental results also demonstrate the effectiveness of proposed method.
+----------- Originality -----------
+SCORE: 2 (Conventional: Rather straightforward, a number of people could have come up with this)
+----------- Potential impact -----------
+SCORE: 2 (Limited: Impact limited to improving the state-of-the-art for the problem being tackled)
+----------- Reproducibility -----------
+SCORE: 1 (None of the code, data, and the details of the experimental setup are made available)
+----------- Quality of execution -----------
+SCORE: 3 (Reasonable: Generally solid work, but certain claims could be justified better)
+----------- Quality of presentation -----------
+SCORE: 3 (Reasonable: Understandable to a large extent, but parts of the paper need more work)
+----------- Adequacy of citations -----------
+SCORE: 2 (Reasonable: Coverage of past work is acceptable, but a few papers are missing)
+----------- Ethics -----------
+SCORE: 1 (No)
+----- TEXT:
+this paper has no problem
+----------- Strengths -----------
+The main contributions of this work are:
+- this paper proposed to construct the user-user similarity graph and item-item similarity graph for social recommendation
+- this paper proposed a GCN based methods to incorporate the above information for improving the recommendation performance
+- the experimental result is convinced and sufficient. Also, the proposed model achieved higher performance on evaluate  real-world datasets comparison with other sota methods.
+----------- Weaknesses -----------
+- the novelty of this paper is limited. The construction of user-user similarity graph and item-item similarity graph is easy and  usual.
+- the constructed similarity graph is simple and may be not effective in sparse case.
+- the structure of three GCNs is too complicated, maybe it is slow down the training time. Why not train on a big graph？
+----------- Rebuttal -----------
+1. the structure of three GCNs is too complicated, how long do you train the model? Why not train on a big graph？
+2. the dataset is too small, which is not applied well in real-world. why do you choose the dataset to perform evaluation?
+
+
+----------------------- REVIEW 4 ---------------------
+SUBMISSION: 1006
+TITLE: Dual Side Deep Context-aware Modulation for Social Recommendation
+AUTHORS: Bairan Fu, Wenming Zhang, Guangneng Hu, Xinyu Dai, Shujian Huang and Jiajun Chen
+
+----------- Relevance to the Web Conference -----------
+SCORE: 1 (Relevant)
+----- TEXT:
+This work proposed a social recommender based on duality, which falls in the category of user modeling and personalization.
+----------- Overall evaluation -----------
+SCORE: 1 (Weak accept)
+----------- Summary -----------
+Based on the judge that historical user-item interaction information is limited in modeling user preference, this work proposed that modeling social relation (user-user relation), user side interests (user’s multiple interest on different items) and item side information (multiple item’s attraction to users) together can on the contrary augment recommendation, which forms the driven idea of this work. The attempt of modeling the comprehensive interactions from different aspects is promising, and the dual architecture of the model design is suitable for this setting. The appropriate expression in the methodology part including equations, notions and experimental settings provide a good reproducibility of this work. The presentation makes this work easy to follow. However, still minor mistakes and typos can found in this work and some expression appears not appropriate. Above all, this work can meet the accept borderline of the web conference.
+----------- Originality -----------
+SCORE: 3 (Creative: Only a few people in our community would have put these ideas together)
+----- TEXT:
+The idea that modeling social relation, user side interests and item side information together in recommendation is novel, the attempt that calculating two collaborative similarity (users and items) and social relation with a dual architecture is novel.
+----------- Potential impact -----------
+SCORE: 3 (Broad: Could help ongoing research in a broader research community)
+----- TEXT:
+Since social recommendation is evolving rapidly these years, this work can help improve the social recommendation research.
+----------- Reproducibility -----------
+SCORE: 2 (Some but not all code, data or the details of the experimental setup are made available)
+----- TEXT:
+The appropriate expression in the methodology part including equations, notions and experimental settings provide a relatively good reproducibility of this work. However, I would encourage author release their origin code on the internet.
+----------- Quality of execution -----------
+SCORE: 3 (Reasonable: Generally solid work, but certain claims could be justified better)
+----- TEXT:
+e.g. Line 141-142 “(shallow) context only leads to missing information” this claim is too strong, since large amount of recommendation works are conducted based on the so-called shallow context here but still they obtain good results, and the information is not missing but to some extent biased.
+----------- Quality of presentation -----------
+SCORE: 3 (Reasonable: Understandable to a large extent, but parts of the paper need more work)
+----------- Adequacy of citations -----------
+SCORE: 2 (Reasonable: Coverage of past work is acceptable, but a few papers are missing)
+----------- Ethics -----------
+SCORE: 1 (No)
+----- TEXT:
+No
+----------- Strengths -----------
+The attempt of modeling the comprehensive interactions from different aspects is promising, and the dual architecture of the model design is suitable for this setting. The appropriate expression in the methodology part including equations, notions and experimental settings provide a good reproducibility of this work. 
+The presentation makes this work easy to follow.
+----------- Weaknesses -----------
+Minor mistakes and Typos:
+1. Line110，“the the user”->the
+2. Line 268, “NGCF”-> abbreviation without any explanation before
+3. Line 141-142 “(shallow) context only leads to missing information“ this claim is too strong
+4. Line 375 “rgnn->RGNN
+5. Figure 2, user’s social graph box, the two graphs appear to be the same? 
+Expressions:
+1. In the bottom-left part of Figure 1, the deep context box, it seems the author want to present that there is relation between items and items, not user with multiple items. However, the expression appears in Line 145-147 seems shows the latter meaning, which is confusing, since this is one of the main driven idea, author should clarify this. 
+2. The second driven idea of this work, which is line156-157“In fact, if the item’s past consumers is a friend of the 
+targeted user or have the similar user, the item may be more attractive to the users”, this appears not novel even in some early version of  social recommenders, e.g. ref [Collaborative topic regression with social matrix factorization for recommendation systems. arXiv 
+preprint arXiv:1206.4684 (2012). 
+] reflect that friends have similar tastes. However, the measure that modeling social relation, user side interests (user similarity) and item side attraction together is promising.
+----------- Reasons to accept -----------
+The Strengths of this work is there driven idea is novel regarding the social recommendation, and the careful writing makes this work really technical convincing. However, this work can also be improved by correcting some mistakes. Above all, this work can meet the accept borderline of the web conference.
+
+
+------------------------------------------------------
