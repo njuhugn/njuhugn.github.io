@@ -44,6 +44,185 @@ th, td {
   padding: 8px;
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+/* 基础样式重置与页面风格，保持简洁学术风 */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body {
+		font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+		background-color: #f5f7fa;
+		color: #1e2a3e;
+		line-height: 1.5;
+		padding: 40px 20px;
+	}
+	.container {
+		max-width: 1300px;
+		margin: 0 auto;
+		background-color: #ffffff;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+		border-radius: 20px;
+		padding: 30px 35px;
+	}
+	/* 信息块样式 */
+	.infoblock {
+		margin-bottom: 45px;
+	}
+	.blocktitle {
+		font-size: 1.8rem;
+		font-weight: 600;
+		border-left: 6px solid #d14;
+		padding-left: 18px;
+		margin-bottom: 25px;
+		color: #0a2942;
+		letter-spacing: -0.3px;
+	}
+	.blockcontent {
+		padding-left: 5px;
+	}
+	/* 论文列表样式 - 每个条目改为flex布局，左侧图片右侧内容 */
+	ol {
+		list-style: none;
+		counter-reset: li-counter;
+	}
+	li {
+		counter-increment: li-counter;
+		margin-bottom: 32px;
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+		background-color: #fefefe;
+		border-radius: 16px;
+		padding: 12px 16px 12px 12px;
+		transition: box-shadow 0.2s ease, background 0.2s ease;
+		border: 1px solid #e9edf2;
+	}
+	li:hover {
+		background-color: #fafcff;
+		box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+		border-color: #cfdee9;
+	}
+	/* 论文配图容器 */
+	.paper-figure {
+		flex-shrink: 0;
+		width: 110px;
+		height: 110px;
+		background-color: #f0f3f8;
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+		border: 1px solid #e2e8f0;
+		transition: transform 0.2s;
+	}
+	.paper-figure img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	/* 占位图风格（如果没有真实图片，使用示意SVG；可替换实际路径）*/
+	.placeholder-img {
+		background: linear-gradient(135deg, #cfdfed, #b7c9df);
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 32px;
+		color: #2c5a7a;
+		font-weight: 500;
+	}
+	/* 论文详情区域 */
+	.paper-details {
+		flex: 1;
+		font-size: 0.95rem;
+	}
+	.paper-title {
+		font-weight: 700;
+		font-size: 1rem;
+		color: #0b3552;
+		margin-bottom: 4px;
+	}
+	.paper-title a {
+		text-decoration: none;
+		color: #0b5e7c;
+		border-bottom: 1px dotted #8bb3c9;
+	}
+	.paper-title a:hover {
+		color: #cc2b1d;
+		border-bottom: 1px solid #cc2b1d;
+	}
+	.paper-meta {
+		color: #2c4c6e;
+		font-size: 0.87rem;
+		margin: 5px 0 6px 0;
+		line-height: 1.45;
+	}
+	.paper-links {
+		margin-top: 8px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		font-size: 0.82rem;
+	}
+	.paper-links a {
+		text-decoration: none;
+		color: #2c6e9e;
+		background-color: #eef3fc;
+		padding: 2px 8px;
+		border-radius: 20px;
+		transition: all 0.2s;
+		font-weight: 500;
+	}
+	.paper-links a:hover {
+		background-color: #d4e5f5;
+		color: #a03121;
+	}
+	i, em {
+		font-style: normal;
+	}
+	.conference-name {
+		font-style: italic;
+		color: #236b7c;
+	}
+	.badge-oral {
+		background-color: #e6f7e6;
+		color: #2b6e2f;
+		border-radius: 20px;
+		padding: 2px 8px;
+		font-size: 0.7rem;
+		font-weight: 600;
+	}
+	@media (max-width: 680px) {
+		.container {
+			padding: 18px;
+		}
+		li {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+		.paper-figure {
+			width: 100px;
+			height: 100px;
+			margin-bottom: 10px;
+		}
+		.paper-links {
+			justify-content: center;
+		}
+	}
+	hr {
+		margin: 20px 0;
+		border: 0;
+		height: 1px;
+		background: linear-gradient(to right, #e0e6ed, transparent);
+	}
 </style>
 
 <body>
@@ -604,6 +783,9 @@ Nanjing University Travel Grant 2015 (net CN¥1,500): IJCAI-15, Jul 25 - 31, Bue
 </table>
 </div></div>
 
+<div class="container">
+<!-- ========= 会议论文部分 ========= -->
+		
 <div class="infoblock">
 <div class="blocktitle"><i class="fas fa-flask"></i> Research</div>
 <div class="blockcontent">
@@ -613,61 +795,233 @@ Nanjing University Travel Grant 2015 (net CN¥1,500): IJCAI-15, Jul 25 - 31, Bue
 <div class="blockcontent">
 <ol reversed>  
 
-<li><a href="pdf/SeedOptE-aaai26.pdf" target="_blank">Dual-Seed Evolutionary Algorithm for Noise Optimization in Diffusion Models</a>. Yuzheng Tan, Yuan He, Yao Zhu,   Tianlin Huo, Huanqian Yan, Hang Su, Shuxin Zhang, <b>Guangneng Hu</b>. <i>AAAI Conference on Artificial Intelligence (<font color="red"><b>AAAI</b></font>)</i>, 2026 (Jan 20–27). &nbsp; | &nbsp; [<a href="pdf/SeedOptE-aaai26.pdf" target="_blank">Official</a>]
-		
-<li><a href="pdf/SEFE-icml25.pdf" target="_blank">SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning</a>. Jinpeng Chen, Runmin Cong, Yuzhi Zhao, Hongzheng Yang, <b>Guangneng Hu</b>, Horace Ip, Sam Kwong. <i>International Conference on Machine Learning (<font color="red"><b>ICML</b></font>)</i>, 2025 (Jul 13–19). &nbsp; | &nbsp; [<a href="https://openreview.net/forum?id=teJdFzLnKh" target="_blank">Official</a>]
-    
-<li><a href="pdf/ICM-aaai25.pdf" target="_blank">ICM-Assistant: Instruction-tuning Multimodal Large Language Models for Rule-based Explainable Image Content Moderation</a>. Mengyang Wu, Yuzhi Zhao, Jialun CAO, Mingjie Xu, Zhongming Jiang, Xuehui Wang, Qinbin Li, <b>Guangneng Hu</b>, Shengchao Qin, Chi-Wing Fu. <i>AAAI Conference on Artificial Intelligence (<font color="red"><b>AAAI</b></font>)</i>, 2025 (Feb 25–Mar 4), p.8413-8422. &nbsp; | &nbsp; [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/32908" target="_blank">Official</a>]
-  
-<li><a href="pdf/MAMO-ecai24.pdf" target="_blank">MAMO: Deep Multi-task Architecture Learning via Multi-objective Optimization with Gradients Mediative Kernel</a>. Yuzheng Tan, <b>Guangneng Hu</b>, Shuxin Zhang. <i>European Conference on Artificial Intelligence (<font color="red"><b>ECAI</b></font>)</i>, 2024 (Oct 19-24), p.266-273.  &nbsp; | &nbsp; [<a href="https://ebooks.iospress.nl/volumearticle/69592" target="_blank">Official</a>]
-
-<li><a href="pdf/COMO-eccv24.pdf" target="_blank">Improving Vision and Language Concepts Understanding with Multimodal Counterfactual Samples</a>. Chengen Lai, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>. <i>European Conference on Computer Vision (<font color="red"><b>ECCV</b></font>)</i>, 2024 (Sep 29-Oct 4), p.174–191.  &nbsp; | &nbsp; [<a href="https://link.springer.com/chapter/10.1007/978-3-031-72890-7_11" target="_blank">Official</a>]
-  
-<li><a href="pdf/mcle-aaai24.pdf" target="_blank">Towards More Faithful Natural Language Explanation Using Multi-Level Contrastive Learning in VQA</a>. Chengen Lai, Shengli Song, Shiqi Meng, Jingyang Li, Sitong Yan, <b>Guangneng Hu</b>. <i>AAAI Conference on Artificial Intelligence (<font color="red"><b>AAAI</b></font>)</i>, 2024 (Feb 20-28), p.2849–2857. &nbsp; | &nbsp; [<a href="https://github.com/njuhugn/MCLE" target="_blank">Code+Data</a>], &nbsp; [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/28065" target="_blank">Official</a>]
-  
-<li><a href="pdf/TITAN-ijcai23.pdf" target="_blank">TITAN: Task-oriented Dialogues with Mixed-Initiative Interactions</a>. Sitong Yan, Shengli Song, Jingyang Li, Shiqi Meng,  <b>Guangneng Hu</b>. <i>International Joint Conference on Artificial Intelligence (<font color="red"><b>IJCAI</b></font>)</i>,  2023 (Aug 19-25), p.5251–5259 &nbsp; | &nbsp; [<a href="https://www.ijcai.org/proceedings/2023/0583" target="_blank">Official</a>]
-  
-<li><a href="pdf/dicer-www21.pdf" target="_blank">Dual Side Deep Context-aware Modulation for Social Recommendation</a>. Bairan Fu, Wenming Zhang, <b>Guangneng Hu</b>, Xinyu Dai, Shujian Huang,  Jiajun Chen. <i>The World Wide Web Conference (<font color="red"><b>TheWebConf</b></font>)</i>,  2021 (Apr 19-23), p.2524–2534. &nbsp; | &nbsp; [<a href="pdf/www2021-reviews.pdf" target="_blank">Revs</a>], &nbsp; [<a href="https://dl.acm.org/doi/fullHtml/10.1145/3442381.3449940" target="_blank">Official</a>], &nbsp; [Oral], &nbsp; [<a href="https://github.com/Drone-Banks/DICER-WWW-2021" target="_blank">Code+Data</a>], &nbsp; [<strong><a href="research-dicer.html" target="_blank">Proj. Page</a></strong>]
-  
-<li><a href="pdf/trnews-eacl21.pdf" target="_blank">TrNews: Heterogeneous User-Interest Transfer Learning for News Recommendation</a>. <b>Guangneng Hu</b>, Qiang Yang. <i>European Chapter of the Association for Computational Linguistics (<font color="red"><b>EACL</b></font>)</i>,  2021 (Apr 19-23), p.734–744. &nbsp; | &nbsp; [<a href="pdf/eacl2021-reviews.txt" target="_blank">Revs</a>], &nbsp; [<a href="https://www.aclweb.org/anthology/2021.eacl-main.62/" target="_blank">Official</a>], &nbsp; [Oral (<a href="pdf/eacl21-trnews-slides.pdf" target="_blank">Slides</a>) (<a href="https://www.virtual2021.eacl.org/paper_main.319.html" target="_blank">Video1</a> | <a href="https://slideslive.com/38954371/trnews-heterogeneous-userinterest-transfer-learning-for-news-recommendation" target="_blank">Video2</a>)], &nbsp; [<a href="pdf/eacl21-trnews-poster.pdf" target="_blank">Poster</a>]
-
-  <li><a href="pdf/privnet-emnlp20.pdf" target="_blank">PrivNet: Safeguarding Private Attributes in Transfer Learning for Recommendation</a>. <b>Guangneng Hu</b>, Qiang Yang. <i>Findings of the Association for Computational Linguistics: EMNLP (<font color="red"><b>EMNLP Findings</b></font>)</i>,  2020 (Nov 16-20), p.4506–4516. &nbsp; | &nbsp;  [<a href="pdf/emnlp2020-reviews.txt" target="_blank">Revs</a>], &nbsp; [<a href="https://www.aclweb.org/anthology/2020.findings-emnlp.404/" target="_blank">Official</a>], &nbsp; [<a href="https://www.dropbox.com/sh/1beepxv7v723dw1/AAAvP0R1X7QIqZw8eeXRywjSa?dl=0" target="_blank">Code+Data</a>]
-    
-<li><a href="pdf/pne-naacl19.pdf" target="_blank">Personalized Neural Embeddings for Collaborative Filtering with Text</a>. <b>Guangneng Hu</b>. <i>North American Chapter of the Association for Computational Linguistics (<font color="red"><b>NAACL</b></font>)</i>,  2019 (Jun 2-7),  p.2082–2088. &nbsp; | &nbsp;  [<a href="pdf/naacl2019-reviews.txt" target="_blank">Revs</a>], &nbsp; [<a href="https://www.aclweb.org/anthology/N19-1212/" target="_blank">Official</a>], &nbsp; [Oral (<a href="pdf/naacl19-pne-slides.pdf" target="_blank">Slides</a>)] 
-  
-<li><a href="pdf/tmh-www19.pdf" target="_blank">Transfer Meets Hybrid: A Synthetic Approach for Cross-Domain Collaborative Filtering with Text</a>. <b>Guangneng Hu</b>, Yu Zhang,  Qiang Yang. <i>The World Wide Web Conference (<font color="red"><b>TheWebConf</b></font>)</i>,  2019 (May 13-17), p.2822–2829. &nbsp; | &nbsp; [<a href="pdf/www2019-reviews.txt" target="_blank">Revs</a>], &nbsp; [<a href="https://dl.acm.org/doi/10.1145/3308558.3313543" target="_blank">Official</a>], &nbsp; [<a href="https://www.dropbox.com/s/z3m1ucedgx67cpv/www19-tmh-code-only.zip?dl=0" target="_blank">Code</a>], &nbsp; [<a href="pdf/www19-tmh-poster.pdf" target="_blank">Poster</a>]
-  
-<li><a href="pdf/conet-cikm18.pdf" target="_blank">CoNet: Collaborative Cross Networks for Cross-Domain Recommendation</a>. <b>Guangneng Hu</b>, Yu Zhang,  Qiang Yang. <i>ACM International Conference on Information and Knowledge Management (<font color="red"><b>CIKM</b></font>)</i>,  2018 (Oct 22-26), p.667–676. &nbsp; | &nbsp;  [<a href="pdf/cikm2018-reviews.txt" target="_blank">Revs</a>], &nbsp; [<a href="https://dl.acm.org/citation.cfm?id=3271684" target="_blank">Official</a>], &nbsp; [Oral <a href="pdf/cikm18-conet-slides.pdf" target="_blank">(Slides)</a>], &nbsp; [<a href="code/conet-code_only-hu-cikm18-20181115.zip" target="_blank">Code</a>], &nbsp; [<strong><a href="research-conet.html" target="_blank">Proj. Page</a></strong>], &nbsp; [<strong><a href="https://github.com/njuhugn/CoNet" target="_blank">GitHub Repo</a></strong>]
-  
-<li><a href="pdf/tbpr-pakdd17.pdf" target="_blank">Integrating Reviews into Personalized Ranking for Cold Start Recommendation</a>. <b>Guang-Neng Hu</b>,  Xin-Yu Dai. <i>Advances in Knowledge Discovery and Data Mining (<font color="red"><b>PAKDD</b></font>)</i>,  2017 (Sep 18-22), p.708-720. &nbsp; | &nbsp; [<a href="https://link.springer.com/chapter/10.1007/978-3-319-57529-2_55" target="_blank">Official</a>], &nbsp; [Oral]
-  
-<li><a href="pdf/mr3-ijcai15.pdf" target="_blank">A Synthetic Approach for Recommendation: Combining Ratings, Social Relations, and Reviews</a>. <b>Guang-Neng Hu</b>, Xin-Yu Dai, Yunya Song, Shujian Huang,  Jiajun Chen. <i>International Joint Conference on Artificial Intelligence (<font color="red"><b>IJCAI</b></font>)</i>,  2015 (Jul 25-31), p.1756-1762. &nbsp; | &nbsp; [<a href="https://www.ijcai.org/Abstract/15/250" target="_blank">Official</a>], &nbsp; [<a href="code/mr3-mr3pp-code_only-hugn.zip" target="_blank">Code</a>], &nbsp; [Oral]
+<!-- 每篇论文条目已添加 paper-figure 配图区，图片路径可使用实际生成的缩略图或示意占位图 -->
+	<li>
+		<div class="paper-figure">
+			<img src="figures/aaai2026_seedopte.png" alt="Dual-Seed Evolutionary Algorithm" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>📄</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/SeedOptE-aaai26.pdf" target="_blank">Dual-Seed Evolutionary Algorithm for Noise Optimization in Diffusion Models</a>.</div>
+			<div class="paper-meta">Yuzheng Tan, Yuan He, Yao Zhu, Tianlin Huo, Huanqian Yan, Hang Su, Shuxin Zhang, <b>Guangneng Hu</b>. <i class="conference-name">AAAI Conference on Artificial Intelligence (<span style="color:#b33;"><b>AAAI</b></span>)</i>, 2026 (Jan 20–27).</div>
+			<div class="paper-links">[<a href="pdf/SeedOptE-aaai26.pdf" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/icml2025_sefe.png" alt="SEFE: Superficial and Essential Forgetting Eliminator" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🧠</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/SEFE-icml25.pdf" target="_blank">SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning</a>.</div>
+			<div class="paper-meta">Jinpeng Chen, Runmin Cong, Yuzhi Zhao, Hongzheng Yang, <b>Guangneng Hu</b>, Horace Ip, Sam Kwong. <i class="conference-name">International Conference on Machine Learning (<span style="color:#b33;"><b>ICML</b></span>)</i>, 2025 (Jul 13–19).</div>
+			<div class="paper-links">[<a href="https://openreview.net/forum?id=teJdFzLnKh" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/aaai2025_icm_assistant.png" alt="ICM-Assistant" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🖼️</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/ICM-aaai25.pdf" target="_blank">ICM-Assistant: Instruction-tuning Multimodal Large Language Models for Rule-based Explainable Image Content Moderation</a>.</div>
+			<div class="paper-meta">Mengyang Wu, Yuzhi Zhao, Jialun CAO, Mingjie Xu, Zhongming Jiang, Xuehui Wang, Qinbin Li, <b>Guangneng Hu</b>, Shengchao Qin, Chi-Wing Fu. <i class="conference-name">AAAI Conference on Artificial Intelligence (<span style="color:#b33;"><b>AAAI</b></span>)</i>, 2025, p.8413-8422.</div>
+			<div class="paper-links">[<a href="https://ojs.aaai.org/index.php/AAAI/article/view/32908" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/ecai2024_mamo.png" alt="MAMO: Deep Multi-task Architecture Learning" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>⚙️</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/MAMO-ecai24.pdf" target="_blank">MAMO: Deep Multi-task Architecture Learning via Multi-objective Optimization with Gradients Mediative Kernel</a>.</div>
+			<div class="paper-meta">Yuzheng Tan, <b>Guangneng Hu</b>, Shuxin Zhang. <i class="conference-name">European Conference on Artificial Intelligence (<span style="color:#b33;"><b>ECAI</b></span>)</i>, 2024, p.266-273.</div>
+			<div class="paper-links">[<a href="https://ebooks.iospress.nl/volumearticle/69592" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/eccv2024_como.png" alt="Improving Vision and Language Concepts Understanding" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🎯</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/COMO-eccv24.pdf" target="_blank">Improving Vision and Language Concepts Understanding with Multimodal Counterfactual Samples</a>.</div>
+			<div class="paper-meta">Chengen Lai, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>. <i class="conference-name">European Conference on Computer Vision (<span style="color:#b33;"><b>ECCV</b></span>)</i>, 2024, p.174–191.</div>
+			<div class="paper-links">[<a href="https://link.springer.com/chapter/10.1007/978-3-031-72890-7_11" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/aaai2024_mcle.png" alt="Multi-Level Contrastive Learning" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🔍</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/mcle-aaai24.pdf" target="_blank">Towards More Faithful Natural Language Explanation Using Multi-Level Contrastive Learning in VQA</a>.</div>
+			<div class="paper-meta">Chengen Lai, Shengli Song, Shiqi Meng, Jingyang Li, Sitong Yan, <b>Guangneng Hu</b>. <i class="conference-name">AAAI Conference on Artificial Intelligence (<span style="color:#b33;"><b>AAAI</b></span>)</i>, 2024, p.2849–2857.</div>
+			<div class="paper-links">[<a href="https://github.com/njuhugn/MCLE" target="_blank">Code+Data</a>] &nbsp; [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/28065" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/ijcai2023_titan.png" alt="TITAN Task-oriented Dialogues" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>💬</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/TITAN-ijcai23.pdf" target="_blank">TITAN: Task-oriented Dialogues with Mixed-Initiative Interactions</a>.</div>
+			<div class="paper-meta">Sitong Yan, Shengli Song, Jingyang Li, Shiqi Meng, <b>Guangneng Hu</b>. <i class="conference-name">International Joint Conference on Artificial Intelligence (<span style="color:#b33;"><b>IJCAI</b></span>)</i>, 2023, p.5251–5259.</div>
+			<div class="paper-links">[<a href="https://www.ijcai.org/proceedings/2023/0583" target="_blank">Official</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/www2021_dicer.png" alt="Dual Side Deep Context-aware Modulation" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🌐</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/dicer-www21.pdf" target="_blank">Dual Side Deep Context-aware Modulation for Social Recommendation</a>.</div>
+			<div class="paper-meta">Bairan Fu, Wenming Zhang, <b>Guangneng Hu</b>, Xinyu Dai, Shujian Huang, Jiajun Chen. <i class="conference-name">The World Wide Web Conference (<span style="color:#b33;"><b>TheWebConf</b></span>)</i>, 2021, p.2524–2534.</div>
+			<div class="paper-links">[<a href="pdf/www2021-reviews.pdf" target="_blank">Revs</a>] [<a href="https://dl.acm.org/doi/fullHtml/10.1145/3442381.3449940" target="_blank">Official</a>] [Oral] [<a href="https://github.com/Drone-Banks/DICER-WWW-2021" target="_blank">Code+Data</a>] [<strong><a href="research-dicer.html" target="_blank">Proj. Page</a></strong>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/eacl2021_trnews.png" alt="TrNews Transfer Learning" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>📰</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/trnews-eacl21.pdf" target="_blank">TrNews: Heterogeneous User-Interest Transfer Learning for News Recommendation</a>.</div>
+			<div class="paper-meta"><b>Guangneng Hu</b>, Qiang Yang. <i class="conference-name">European Chapter of the Association for Computational Linguistics (<span style="color:#b33;"><b>EACL</b></span>)</i>, 2021, p.734–744.</div>
+			<div class="paper-links">[<a href="pdf/eacl2021-reviews.txt" target="_blank">Revs</a>] [<a href="https://www.aclweb.org/anthology/2021.eacl-main.62/" target="_blank">Official</a>] [Oral (<a href="pdf/eacl21-trnews-slides.pdf" target="_blank">Slides</a>) (<a href="https://www.virtual2021.eacl.org/paper_main.319.html" target="_blank">Video1</a> | <a href="https://slideslive.com/38954371/trnews-heterogeneous-userinterest-transfer-learning-for-news-recommendation" target="_blank">Video2</a>)] [<a href="pdf/eacl21-trnews-poster.pdf" target="_blank">Poster</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/emnlp2020_privnet.png" alt="PrivNet Safeguarding Private Attributes" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🔒</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/privnet-emnlp20.pdf" target="_blank">PrivNet: Safeguarding Private Attributes in Transfer Learning for Recommendation</a>.</div>
+			<div class="paper-meta"><b>Guangneng Hu</b>, Qiang Yang. <i class="conference-name">Findings of EMNLP (<span style="color:#b33;"><b>EMNLP Findings</b></span>)</i>, 2020, p.4506–4516.</div>
+			<div class="paper-links">[<a href="pdf/emnlp2020-reviews.txt" target="_blank">Revs</a>] [<a href="https://www.aclweb.org/anthology/2020.findings-emnlp.404/" target="_blank">Official</a>] [<a href="https://www.dropbox.com/sh/1beepxv7v723dw1/AAAvP0R1X7QIqZw8eeXRywjSa?dl=0" target="_blank">Code+Data</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/naacl2019_pne.png" alt="Personalized Neural Embeddings" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🧬</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/pne-naacl19.pdf" target="_blank">Personalized Neural Embeddings for Collaborative Filtering with Text</a>.</div>
+			<div class="paper-meta"><b>Guangneng Hu</b>. <i class="conference-name">NAACL (<span style="color:#b33;"><b>NAACL</b></span>)</i>, 2019, p.2082–2088.</div>
+			<div class="paper-links">[<a href="pdf/naacl2019-reviews.txt" target="_blank">Revs</a>] [<a href="https://www.aclweb.org/anthology/N19-1212/" target="_blank">Official</a>] [Oral (<a href="pdf/naacl19-pne-slides.pdf" target="_blank">Slides</a>)]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/www2019_tmh.png" alt="Transfer Meets Hybrid" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🔄</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/tmh-www19.pdf" target="_blank">Transfer Meets Hybrid: A Synthetic Approach for Cross-Domain Collaborative Filtering with Text</a>.</div>
+			<div class="paper-meta"><b>Guangneng Hu</b>, Yu Zhang, Qiang Yang. <i class="conference-name">TheWebConf (<span style="color:#b33;"><b>TheWebConf</b></span>)</i>, 2019, p.2822–2829.</div>
+			<div class="paper-links">[<a href="pdf/www2019-reviews.txt" target="_blank">Revs</a>] [<a href="https://dl.acm.org/doi/10.1145/3308558.3313543" target="_blank">Official</a>] [<a href="https://www.dropbox.com/s/z3m1ucedgx67cpv/www19-tmh-code-only.zip?dl=0" target="_blank">Code</a>] [<a href="pdf/www19-tmh-poster.pdf" target="_blank">Poster</a>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/cikm2018_conet.png" alt="CoNet Collaborative Cross Networks" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🌲</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/conet-cikm18.pdf" target="_blank">CoNet: Collaborative Cross Networks for Cross-Domain Recommendation</a>.</div>
+			<div class="paper-meta"><b>Guangneng Hu</b>, Yu Zhang, Qiang Yang. <i class="conference-name">CIKM (<span style="color:#b33;"><b>CIKM</b></span>)</i>, 2018, p.667–676.</div>
+			<div class="paper-links">[<a href="pdf/cikm2018-reviews.txt" target="_blank">Revs</a>] [<a href="https://dl.acm.org/citation.cfm?id=3271684" target="_blank">Official</a>] [Oral <a href="pdf/cikm18-conet-slides.pdf" target="_blank">(Slides)</a>] [<a href="code/conet-code_only-hu-cikm18-20181115.zip" target="_blank">Code</a>] [<strong><a href="research-conet.html" target="_blank">Proj. Page</a></strong>] [<strong><a href="https://github.com/njuhugn/CoNet" target="_blank">GitHub Repo</a></strong>]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/pakdd2017_tbpr.png" alt="Integrating Reviews into Personalized Ranking" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>⭐</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/tbpr-pakdd17.pdf" target="_blank">Integrating Reviews into Personalized Ranking for Cold Start Recommendation</a>.</div>
+			<div class="paper-meta"><b>Guang-Neng Hu</b>, Xin-Yu Dai. <i class="conference-name">PAKDD (<span style="color:#b33;"><b>PAKDD</b></span>)</i>, 2017, p.708-720.</div>
+			<div class="paper-links">[<a href="https://link.springer.com/chapter/10.1007/978-3-319-57529-2_55" target="_blank">Official</a>] [Oral]</div>
+		</div>
+	</li>
+	<li>
+		<div class="paper-figure">
+			<img src="figures/ijcai2015_mr3.png" alt="Synthetic Approach for Recommendation" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🎯</div>';">
+		</div>
+		<div class="paper-details">
+			<div class="paper-title"><a href="pdf/mr3-ijcai15.pdf" target="_blank">A Synthetic Approach for Recommendation: Combining Ratings, Social Relations, and Reviews</a>.</div>
+			<div class="paper-meta"><b>Guang-Neng Hu</b>, Xin-Yu Dai, Yunya Song, Shujian Huang, Jiajun Chen. <i class="conference-name">IJCAI (<span style="color:#b33;"><b>IJCAI</b></span>)</i>, 2015, p.1756-1762.</div>
+			<div class="paper-links">[<a href="https://www.ijcai.org/Abstract/15/250" target="_blank">Official</a>] [<a href="code/mr3-mr3pp-code_only-hugn.zip" target="_blank">Code</a>] [Oral]</div>
+</div>
+</li>						
 </ol>
 </div></div>
 
 
-  
+<!-- ========= 期刊论文部分 ========= -->  
 <div class="infoblock">
 <div class="blocktitle">🔹 Journal</div>
 <div class="blockcontent">
   
 <ol reversed> 
 
-<li><a href="pdf/DESER-InformationIntelligence.pdf" target="_blank">Deep Modular Skip-Attention Networks for Multimodal Named Entity Recognition</a>. Chengen Lai, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>.  <i>Journal of Information and Intelligence</i>, In Press, Journal Pre-proof, 2026 (April 27).  &nbsp; | &nbsp; [<a href="https://www.sciencedirect.com/science/article/pii/S2949715926000351" target="_blank">Official</a>]
-
-<li><a href="pdf/DESIRE-InformationFusion2026.pdf" target="_blank">Integrating Implicit Desire Fusion for Proactive Conversational Recommendation Systems with LLMs</a>. Sitong Yan, Shengli Song, Chengen Lai, Jingyang Li, <b>Guangneng Hu</b>.  <i>Information Fusion</i>, In Press, Journal Pre-proof, 2026 (April 16).  &nbsp; | &nbsp; [<a href="https://www.sciencedirect.com/science/article/pii/S1566253526002526" target="_blank">Official</a>]
-		
-<li><a href="pdf/NSR-PatternRecognition2025.pdf" target="_blank">Advanced Dialog State Tracking with Noetic Graphs for Complex Human-Machine Interactions</a>. Jingyang Li, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>, Chengen Lai, Yulong Zhou.  <i>Pattern Recognition</i>, Volume 168, Dec 2025.  &nbsp; | &nbsp; [<a href="https://www.sciencedirect.com/science/article/pii/S0031320325005023" target="_blank">Official</a>]
-  
-<li><a href="pdf/DANTE-kbs24.pdf" target="_blank">DANTE: Dialog graph enhanced prompt learning for conversational question answering over KGs</a>. Jingyang Li, Shengli Song, Sitong Yan,  <b>Guangneng Hu</b>, Chengen Lai, Yulong Zhou.  <i>Knowledge-Based Systems</i>, Volume 301, 2024 (Jul 31).  &nbsp; | &nbsp; [<a href="https://www.sciencedirect.com/science/article/pii/S0950705124009286" target="_blank">Official</a>]
-  
-<li><a href="pdf/ChatMDG-InformationFusion2024.pdf" target="_blank">ChatMDG: A discourse parsing graph fusion based approach for multi-party dialogue generation</a>. Jingyang Li, Shengli Song, Yixin Li, Hanxiao Zhang, <b>Guangneng Hu</b>.  <i>Information Fusion</i>, Volume 110, 2024 (May 13).  &nbsp; | &nbsp; [<a href="https://www.sciencedirect.com/science/article/pii/S1566253524002471" target="_blank">Official</a>]
-  
-<li><a href="pdf/mr3pp-tkdd2018.pdf" target="_blank">Collaborative Filtering with Topic and Social Latent Factors Incorporating Implicit Feedback</a>. <b>Guang-Neng Hu</b>, Xin-Yu Dai, Fengyu Qiu, Rui Xia, Tao Li, Shujian Huang, Jiajun Chen.  <i>ACM Transactions on Knowledge Discovery from Data (<font color="red"><b>TKDD</font></b>)</i>, Volume 12, Issue 2, 2018 (Jan 23), Article No.: 23, p.1–30.  &nbsp; | &nbsp; [<a href="https://dl.acm.org/citation.cfm?id=3127873" target="_blank">Official</a>], &nbsp; [<a href="code/mr3-mr3pp-code_only-hugn.zip" target="_blank">Code</a>]
+<li>
+<div class="paper-figure">
+	<img src="figures/jinfointel2026_deser.png" alt="Deep Modular Skip-Attention Networks" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>📘</div>';">
+</div>
+<div class="paper-details">
+	<div class="paper-title"><a href="pdf/DESER-InformationIntelligence.pdf" target="_blank">Deep Modular Skip-Attention Networks for Multimodal Named Entity Recognition</a>.</div>
+	<div class="paper-meta">Chengen Lai, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>. <i>Journal of Information and Intelligence</i>, In Press, 2026.</div>
+	<div class="paper-links">[<a href="https://www.sciencedirect.com/science/article/pii/S2949715926000351" target="_blank">Official</a>]</div>
+</div>
+</li>
+<li>
+<div class="paper-figure">
+	<img src="figures/infofusion2026_desire.png" alt="Integrating Implicit Desire Fusion" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>💡</div>';">
+</div>
+<div class="paper-details">
+	<div class="paper-title"><a href="pdf/DESIRE-InformationFusion2026.pdf" target="_blank">Integrating Implicit Desire Fusion for Proactive Conversational Recommendation Systems with LLMs</a>.</div>
+	<div class="paper-meta">Sitong Yan, Shengli Song, Chengen Lai, Jingyang Li, <b>Guangneng Hu</b>. <i>Information Fusion</i>, In Press, 2026.</div>
+	<div class="paper-links">[<a href="https://www.sciencedirect.com/science/article/pii/S1566253526002526" target="_blank">Official</a>]</div>
+</div>
+</li>
+<li>
+<div class="paper-figure">
+	<img src="figures/patternrec2025_nsr.png" alt="Advanced Dialog State Tracking" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>🗂️</div>';">
+</div>
+<div class="paper-details">
+	<div class="paper-title"><a href="pdf/NSR-PatternRecognition2025.pdf" target="_blank">Advanced Dialog State Tracking with Noetic Graphs for Complex Human-Machine Interactions</a>.</div>
+	<div class="paper-meta">Jingyang Li, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>, Chengen Lai, Yulong Zhou. <i>Pattern Recognition</i>, Volume 168, Dec 2025.</div>
+	<div class="paper-links">[<a href="https://www.sciencedirect.com/science/article/pii/S0031320325005023" target="_blank">Official</a>]</div>
+</div>
+</li>
+<li>
+<div class="paper-figure">
+	<img src="figures/kbs2024_dante.png" alt="DANTE Dialog Graph Prompt Learning" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>📊</div>';">
+</div>
+<div class="paper-details">
+	<div class="paper-title"><a href="pdf/DANTE-kbs24.pdf" target="_blank">DANTE: Dialog graph enhanced prompt learning for conversational question answering over KGs</a>.</div>
+	<div class="paper-meta">Jingyang Li, Shengli Song, Sitong Yan, <b>Guangneng Hu</b>, Chengen Lai, Yulong Zhou. <i>Knowledge-Based Systems</i>, Volume 301, 2024.</div>
+	<div class="paper-links">[<a href="https://www.sciencedirect.com/science/article/pii/S0950705124009286" target="_blank">Official</a>]</div>
+</div>
+</li>
+<li>
+<div class="paper-figure">
+	<img src="figures/infofusion2024_chatmdg.png" alt="ChatMDG Discourse Parsing Graph" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>💬</div>';">
+</div>
+<div class="paper-details">
+	<div class="paper-title"><a href="pdf/ChatMDG-InformationFusion2024.pdf" target="_blank">ChatMDG: A discourse parsing graph fusion based approach for multi-party dialogue generation</a>.</div>
+	<div class="paper-meta">Jingyang Li, Shengli Song, Yixin Li, Hanxiao Zhang, <b>Guangneng Hu</b>. <i>Information Fusion</i>, Volume 110, 2024.</div>
+	<div class="paper-links">[<a href="https://www.sciencedirect.com/science/article/pii/S1566253524002471" target="_blank">Official</a>]</div>
+</div>
+</li>
+<li>
+<div class="paper-figure">
+	<img src="figures/tkdd2018_mr3pp.png" alt="Collaborative Filtering with Topic and Social Latent Factors" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'placeholder-img\'>📈</div>';">
+</div>
+<div class="paper-details">
+	<div class="paper-title"><a href="pdf/mr3pp-tkdd2018.pdf" target="_blank">Collaborative Filtering with Topic and Social Latent Factors Incorporating Implicit Feedback</a>.</div>
+	<div class="paper-meta"><b>Guang-Neng Hu</b>, Xin-Yu Dai, Fengyu Qiu, Rui Xia, Tao Li, Shujian Huang, Jiajun Chen. <i>ACM TKDD (<span style="color:#b33;"><b>TKDD</b></span>)</i>, Volume 12, Issue 2, 2018, Article 23.</div>
+	<div class="paper-links">[<a href="https://dl.acm.org/citation.cfm?id=3127873" target="_blank">Official</a>] [<a href="code/mr3-mr3pp-code_only-hugn.zip" target="_blank">Code</a>]</div>
+</div>
+</li>	
 </ol>
 </div></div>
 
-
+</div>  <!-- <div class="container"> ========= 会议论文部分 ========= -->
+	
   
 <div class="infoblock">
 <div class="blocktitle">🔹 Peer-reviewed Workshop</div>
